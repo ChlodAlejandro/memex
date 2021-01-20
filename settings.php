@@ -1,2 +1,9 @@
 <?php
-throw new Exception("oo");
+
+$mxRequireAuth = false;
+
+$mxAllowedUrlTypes = [
+    "http",
+    "https",
+    "raw:magnet"
+];

@@ -1,0 +1,51 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 16px;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+}
+
+header * {
+    pointer-events: none;
+}
+
+#logo {
+    min-width: 150px;
+    width: 12.5vw;
+}
+
+#wordmark {
+    min-width: 250px;
+    width: 17.5vw;
+    margin: 16px 0;
+}
+
+main {
+    margin: 16px 0;
+    padding: 32px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    background-color: #fff;
+
+    text-align: center;
+}
+
+main :first-child {
+    margin-top: 0;
+}
+
+main :last-child {
+    margin-bottom: 0;
+}
+
+footer {
+    font-size: small;
+}
+
+a {
+    color: #222;
+}

@@ -11,3 +11,7 @@
 // Load in basic constants and functions
 require __DIR__ . "/internal/consts.php";
 
+// Route the current request
+
+require __DIR__ . "/router/routes.php";
+mx_route();

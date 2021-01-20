@@ -1,3 +1,8 @@
+# In case this server has lowsy security
+<FilesMatch "\.htaccess" >
+    Deny from all
+</FilesMatch>
+
 # Redirect everything to index.php
 <IfModule mod_rewrite.c>
     RewriteEngine On

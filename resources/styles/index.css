@@ -1,0 +1,64 @@
+body {
+    min-height: 100vh;
+}
+
+header {
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    position: sticky;
+
+    background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.75);
+}
+
+#banner {
+    height: 64px;
+    width: auto;
+}
+
+@keyframes background_animation {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(50deg, #ecf200, #f28d00);
+    background-size: 400% 400%;
+
+    animation: background_animation 19s ease infinite;
+}
+
+#create {
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 64px;
+}
+
+#create :first-child {
+    margin: 0;
+}
+
+#create.active {
+    border-radius: 16px 16px 0 0;
+}
+
+#create form {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+}
+
+#create .create-link-text {
+    width: 85%;
+}
+
+#create .create-link-button {
+    width: 15%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
