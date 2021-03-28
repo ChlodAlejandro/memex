@@ -1,5 +1,6 @@
+# IDE-related directories
 .idea
+.vscode
 
-resources/styles/fonts
-resources/styles/fonts.css
-/vendor/
+# This needs to be downloaded during setup.
+resources/third-party/material-web-components

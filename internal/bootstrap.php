@@ -16,14 +16,14 @@
 
 namespace Memex;
 
-require_once __DIR__ . "/configuration/Constants.php";
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/autoload.php";
 
 use Memex\Errors\ErrorHandler;
 use Memex\Data\Configuration;
 
 // Absorb all shutdowns
-register_shutdown_function(function () { ErrorHandler::shutdown(); });
+if (!MEMEX_DEBUG)
+    register_shutdown_function(function () { ErrorHandler::shutdown(); });
 
 // Load configuration
 Configuration::loadConfiguration();

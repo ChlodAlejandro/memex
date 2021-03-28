@@ -1,6 +1,8 @@
 <?php
 namespace Memex\Errors;
 
+use Memex\Pages\PageLoader;
+
 class ErrorHandler {
 
     public static function shutdown() {
@@ -22,7 +24,7 @@ class ErrorHandler {
 
         if (http_response_code() >= 400) {
             $_SERVER["REDIRECT_STATUS"] = http_response_code();
-            require_once __DIR__ . "/../pages/error.php";
+            PageLoader::loadPage("error");
         }
     }
 

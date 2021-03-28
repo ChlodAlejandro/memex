@@ -4,6 +4,44 @@
 </FilesMatch>
 
 # Redirect everything to index.php
+ErrorDocument 400 /error
+ErrorDocument 401 /error
+ErrorDocument 402 /error
+ErrorDocument 403 /error
+ErrorDocument 404 /error
+ErrorDocument 405 /error
+ErrorDocument 406 /error
+ErrorDocument 407 /error
+ErrorDocument 408 /error
+ErrorDocument 409 /error
+ErrorDocument 410 /error
+ErrorDocument 411 /error
+ErrorDocument 412 /error
+ErrorDocument 413 /error
+ErrorDocument 414 /error
+ErrorDocument 415 /error
+ErrorDocument 416 /error
+ErrorDocument 417 /error
+ErrorDocument 421 /error
+ErrorDocument 422 /error
+ErrorDocument 423 /error
+ErrorDocument 424 /error
+ErrorDocument 426 /error
+ErrorDocument 428 /error
+ErrorDocument 429 /error
+ErrorDocument 431 /error
+ErrorDocument 451 /error
+ErrorDocument 500 /error
+ErrorDocument 501 /error
+ErrorDocument 502 /error
+ErrorDocument 503 /error
+ErrorDocument 504 /error
+ErrorDocument 505 /error
+ErrorDocument 506 /error
+ErrorDocument 507 /error
+ErrorDocument 508 /error
+ErrorDocument 510 /error
+ErrorDocument 511 /error
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /

@@ -1,6 +1,7 @@
 <?php
 namespace Memex\Route\RouteTypes;
 
+use Memex\Pages\PageLoader;
 use Memex\Route\Route;
 
 /**
@@ -16,6 +17,6 @@ class RouteMain extends Route {
     }
 
     function execute() {
-        require_once __DIR__ . "/../pages/landing_page.php";
+        PageLoader::loadPage("landing");
     }
 }

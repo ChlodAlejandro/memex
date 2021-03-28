@@ -1,6 +1,7 @@
 <?php
 // https://gist.github.com/henriquemoody/6580488
 $http_errors = [
+	200 => 'Error Page Found',
     400 => 'Bad Request',
     401 => 'Unauthorized', // RFC 7235
     402 => 'Payment Required',
@@ -43,6 +44,8 @@ $http_errors = [
     511 => 'Network Authentication Required', // RFC 6585
 ];
 ob_clean();
+
+$status = isset($_SERVER["REDIRECT_STATUS"]) ? $_SERVER["REDIRECT_STATUS"] : 200;
 ?>
 <!doctype html>
 <html lang="en">
@@ -63,7 +66,9 @@ ob_clean();
         </header>
 
         <main>
-            <h1><?php echo $http_errors[$_SERVER["REDIRECT_STATUS"]]; ?></h1>
+            <h1><?php
+				echo $http_errors[$status];
+			?></h1>
             <p>Perhaps you would like to <a href="<?php echo $_SERVER["HTTP_REFERER"] ?? "/" ?>">go back</a>?</p>
         </main>
 
