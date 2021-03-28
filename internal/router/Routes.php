@@ -1,6 +1,7 @@
 <?php
 namespace Memex\Route;
 
+use Memex\API\APIRoutes;
 use Memex\Route\RouteTypes\RouteError;
 use Memex\Route\RouteTypes\RouteMain;
 use Memex\Route\RouteTypes\RouteNotFound;
@@ -17,6 +18,13 @@ class Router {
         ];
 
         foreach ($routes as $route) {
+            if ($route->catch($_SERVER["REQUEST_URI"])) {
+                $route->execute();
+                return;
+            }
+        }
+
+        foreach (APIRoutes::getApiRoutes() as $route) {
             if ($route->catch($_SERVER["REQUEST_URI"])) {
                 $route->execute();
                 return;

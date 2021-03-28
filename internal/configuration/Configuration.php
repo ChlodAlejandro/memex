@@ -80,4 +80,9 @@ class Configuration
         }
     }
 
+    public static function exportConfiguration() : array {
+        $refClass = new ReflectionClass("Memex\Data\Configuration");
+        return $refClass->getStaticProperties();
+    }
+
 }

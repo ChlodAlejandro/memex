@@ -2,7 +2,7 @@
 
 // This will load all PHP files in the `internal` directory, alphabetically.
 
-function recursiveLoad($target) {
+function recursiveRequire($target, $filesOnly = false) {
     $realTarget = realpath($target);
     $fsObjects = scandir($realTarget);
 
@@ -37,9 +37,17 @@ function recursiveLoad($target) {
         require_once $realTarget . DIRECTORY_SEPARATOR . $file;
     }
 
-    foreach ($directories as $directory) {
-        recursiveLoad($realTarget . DIRECTORY_SEPARATOR . $directory);
+    if (!$filesOnly) {
+        foreach ($directories as $directory) {
+            recursiveRequire($realTarget . DIRECTORY_SEPARATOR . $directory);
+        }
     }
 }
 
-recursiveLoad(__DIR__);
+recursiveRequire(__DIR__, true);
+recursiveRequire(__DIR__ . "/util");
+recursiveRequire(__DIR__ . "/pages");
+recursiveRequire(__DIR__ . "/error");
+recursiveRequire(__DIR__ . "/configuration");
+recursiveRequire(__DIR__ . "/router");
+recursiveRequire(__DIR__ . "/api");
