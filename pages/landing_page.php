@@ -1,4 +1,5 @@
 <?php
+namespace Memex\Pages\Landing;
 global $mxRootUrl, $mxRequireAuth;
 ?>
 <!DOCTYPE html>
@@ -33,16 +34,18 @@ global $mxRootUrl, $mxRequireAuth;
 		<script src="/resources/scripts/api/memex-api-linker.js"></script>
         <?php endif; ?>
 	</head>
-	<body>
+	<body class="landingPage">
 
 		<header>
-			<img id="banner" src="/resources/memex-banner.png">
+			<img id="banner" src="/resources/memex-banner.png" alt="Memex">
 		</header>
 
-		<?php if ($mxRequireAuth): ?>
-		login
-		<?php else:
-            include __DIR__ . "/components/landing_page_linker.php";
-		endif; ?>
+		<div class="landingPage-content">
+            <?php if ($mxRequireAuth): ?>
+				login
+            <?php else:
+                include __DIR__ . "/components/landing_page_linker.php";
+            endif; ?>
+		</div>
 	</body>
 </html>

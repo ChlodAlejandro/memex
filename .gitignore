@@ -1,1 +1,5 @@
-.idea 
+.idea
+
+resources/styles/fonts
+resources/styles/fonts.css
+/vendor/

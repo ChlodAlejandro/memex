@@ -9,7 +9,7 @@ header {
     position: sticky;
 
     background-color: white;
-    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
 }
 
 #banner {
@@ -18,9 +18,9 @@ header {
 }
 
 @keyframes background_animation {
-    0% { background-position: 0% 50% }
+    0% { background-position: 0 50% }
     50% { background-position: 100% 50% }
-    100% { background-position: 0% 50% }
+    100% { background-position: 0 50% }
 }
 
 body {

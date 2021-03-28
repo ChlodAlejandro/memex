@@ -1,17 +1,10 @@
 <?php
+namespace Memex;
 
-//
-// MEMEX
-//
-// A simple URL shortener.
-//
-// Copyright (c) 2020 Chlod Aidan Alejandro. Released under the Apache License 2.0.
-//
+use Memex\Route\Router;
 
-// Load in basic constants and functions
-require __DIR__ . "/internal/consts.php";
+// Boostrap
+require __DIR__ . "/internal/bootstrap.php";
 
 // Route the current request
-
-require __DIR__ . "/router/routes.php";
-mx_route();
+Router::routeRequest();

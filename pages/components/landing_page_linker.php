@@ -6,7 +6,7 @@
             <input
 				id="createForm_url"
 				name="url"
-                type="text"
+                type="url"
                 class="mdc-text-field__input"
                 aria-labelledby="createLabel"
                 placeholder="Place your URL here...">
@@ -29,6 +29,7 @@
         event.preventDefault();
 
         const url = document.querySelector("#createForm_url").value;
+
         // TODO check and post
 	});
 </script>

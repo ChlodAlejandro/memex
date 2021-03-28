@@ -58,8 +58,8 @@ ob_clean();
     <body class="flex-centered">
 
         <header class="flex-centered">
-            <img id="logo" src="/resources/memex-logo/memex-logo.512.png">
-            <img id="wordmark" src="/resources/memex-wordmark.svg">
+            <img id="logo" src="/resources/memex-logo/memex-logo.512.png" alt="Memex logo">
+            <img id="wordmark" src="/resources/memex-wordmark.svg" alt="Memex">
         </header>
 
         <main>

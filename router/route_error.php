@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . "/route_base.php";
+namespace Memex\Route\RouteTypes;
+
+use Memex\Route\Route;
 
 class RouteError extends Route {
 
@@ -9,6 +11,6 @@ class RouteError extends Route {
     }
 
     function execute() {
-        require __DIR__ . "/../internal/error.php";
+        require __DIR__ . "/../internal/pages/error.php";
     }
 }

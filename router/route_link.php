@@ -1,11 +1,13 @@
 <?php
-require_once __DIR__ . "/route_base.php";
+namespace Memex\Route\RouteTypes;
+
+use Memex\Route\Route;
 
 class RouteLink extends Route {
 
 
     function catch(string $path): bool {
-
+        return false;
     }
 
     function execute() {

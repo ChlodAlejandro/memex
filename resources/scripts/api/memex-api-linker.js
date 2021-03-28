@@ -23,5 +23,4 @@ memex.dep.register("api.linker", async () => {
         }
 
     }
-
 });

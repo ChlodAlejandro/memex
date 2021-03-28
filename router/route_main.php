@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . "/route_base.php";
+namespace Memex\Route\RouteTypes;
+
+use Memex\Route\Route;
 
 /**
  * Class RouteMain
@@ -10,7 +12,7 @@ class RouteMain extends Route {
 
     function catch(string $path): bool {
         return $path == "/"
-            || preg_match("#\/index(\.(php|html))?#", $path);
+            || preg_match("#/index(\.(php|html))?#", $path);
     }
 
     function execute() {
