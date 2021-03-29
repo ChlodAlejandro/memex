@@ -20,6 +20,7 @@ class Router {
         foreach ($routes as $route) {
             if ($route->catch($_SERVER["REQUEST_URI"])) {
                 $route->execute();
+
                 return;
             }
         }
@@ -27,6 +28,7 @@ class Router {
         foreach (APIRoutes::getApiRoutes() as $route) {
             if ($route->catch($_SERVER["REQUEST_URI"])) {
                 $route->execute();
+
                 return;
             }
         }

@@ -14,4 +14,5 @@ class RouteError extends Route {
     function execute() {
         PageLoader::loadPage("error");
     }
+
 }

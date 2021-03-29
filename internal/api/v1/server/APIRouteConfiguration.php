@@ -5,16 +5,13 @@ use Memex\API\APIResponse;
 use Memex\Data\Configuration;
 use Memex\Route\Route;
 
-class GetConfiguration extends Route
-{
+class APIRouteConfiguration extends Route {
 
-    function catch(string $path): bool
-    {
-        return $path == "/api/v1/server/configuration/get";
+    function catch(string $path): bool {
+        return preg_match("#^/api/v1/server/configuration$#", $path);
     }
 
-    function execute()
-    {
+    function execute() {
         APIResponse::ok([
             "configuration" => Configuration::exportConfiguration()
         ]);

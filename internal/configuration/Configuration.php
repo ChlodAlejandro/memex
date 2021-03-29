@@ -8,8 +8,8 @@ use ReflectionClass;
 use ReflectionException;
 use ReflectionProperty;
 
-class Configuration
-{
+class Configuration {
+
     /**
      * @var bool Whether or not authentication is required before login.
      * @setting mxRequireAuth
@@ -44,7 +44,7 @@ class Configuration
             } else {
                 try {
                     // Attempt to load `settings.php`.
-                    set_error_handler(function(int $errno , string $errstr) {
+                    set_error_handler(function (int $errno, string $errstr) {
                         ErrorHandler::mx_fatal_exit(
                             "Memex is misconfigured: $errstr ($errno)<br/>" .
                             "Please recheck your configuration."
@@ -69,7 +69,7 @@ class Configuration
         foreach ($refClass->getStaticProperties() as $property => $default) {
             try {
                 $refProp = new ReflectionProperty("Memex\Data\Configuration", $property);
-                preg_match("#@setting (.*?)\n#s", $refProp->getDocComment(), $docSetting);
+                preg_match("#@setting (.*?)(?:\n|\*/)#s", $refProp->getDocComment(), $docSetting);
                 $setting = trim($docSetting[1]);
                 if (isset($configurationVariables[$setting])) {
                     $refProp->setValue(null, $configurationVariables[$setting]);
@@ -80,8 +80,9 @@ class Configuration
         }
     }
 
-    public static function exportConfiguration() : array {
+    public static function exportConfiguration(): array {
         $refClass = new ReflectionClass("Memex\Data\Configuration");
+
         return $refClass->getStaticProperties();
     }
 

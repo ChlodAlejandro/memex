@@ -13,10 +13,11 @@ class RouteMain extends Route {
 
     function catch(string $path): bool {
         return $path == "/"
-            || preg_match("#/index(\.(php|html))?#", $path);
+            || preg_match("#^/index(\.(php|html))?$#", $path);
     }
 
     function execute() {
         PageLoader::loadPage("landing");
     }
+
 }

@@ -2,6 +2,7 @@
 namespace Memex\Route\RouteTypes;
 
 use Memex\Route\Route;
+
 /**
  * Class RouteNotFound
  *

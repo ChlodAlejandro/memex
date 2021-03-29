@@ -18,12 +18,14 @@ namespace Memex;
 
 require_once __DIR__ . "/autoload.php";
 
-use Memex\Errors\ErrorHandler;
 use Memex\Data\Configuration;
+use Memex\Errors\ErrorHandler;
 
 // Absorb all shutdowns
 if (!MEMEX_DEBUG)
-    register_shutdown_function(function () { ErrorHandler::shutdown(); });
+    register_shutdown_function(function () {
+        ErrorHandler::shutdown();
+    });
 
 // Load configuration
 Configuration::loadConfiguration();
